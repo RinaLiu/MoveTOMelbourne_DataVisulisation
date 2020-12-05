@@ -1,0 +1,43 @@
+.header-social ul li a:hover,
+.what-offer-content .owl-controls i:hover,
+.service-text-icon:hover .service-title-head, 
+.service-text-icon:hover .service-title-head span,
+.blue-clr,
+.testimonial-slide .owl-next:hover, 
+.testimonial-slide .owl-prev:hover,
+.blog-single-img-text blockquote:before,
+.next-prev-post a:hover, 
+.reply-commnet a:hover {
+	color: #c60707;
+}
+.blue-bg-clr,
+.service-text-icon:hover .service-icon,
+ul.tabs li.active,
+.music-bg,
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:hover,
+.pagination>li>span:focus,
+.share-post-list li:hover,
+.list-group-item:hover .badge {
+	background-color: #c60707; 
+}
+
+.institute-icon-time,
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:hover,
+.pagination>li>span:focus,
+.list-group-item:hover .badge {
+	border-color: #c60707;
+}
+.work-item:before,
+.work-item:after {
+	background-color: rgba(198, 7, 7, 0.4);
+}
+.testimonial-pic:before {
+	border-bottom: 250px solid rgba(198, 7, 7, 0.8);
+}
+.goolge-address {
+	background-color: rgba(198, 7, 7, 0.8);
+}

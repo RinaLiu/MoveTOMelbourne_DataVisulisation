@@ -1,0 +1,207 @@
+<!--Oringal Idea Sourced From: http://bl.ocks.org/dbuezas/9306799-->
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 600px;
+  height: 500px;
+  position: relative;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+path.slice{
+	stroke-width:2px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
+
+</style>
+<body>
+<center>
+    <table>
+    <tr>
+        <td>
+                <input type="radio" name="year" value="yes" onClick="change(&quot;Age_Group_formated_2011.csv&quot;);">2011
+                <input type="radio" name="year" value="no"  checked=true onClick="change(&quot;Age_Group_formated_2016.csv&quot;);">2016
+        </td>
+    </tr>
+        <tr>
+        <td>
+            <script src="https://d3js.org/d3.v3.min.js"></script>
+        </td>
+        </tr>
+    </table>
+        </center>
+    <script>
+
+var svg = d3.select("body")
+	.append("svg")
+	.append("g")
+
+svg.append("g")
+	.attr("class", "slices");
+svg.append("g")
+	.attr("class", "labels");
+svg.append("g")
+	.attr("class", "lines");
+
+var width = 600,
+    height = 450,
+	radius = Math.min(width, height) / 2;
+
+var pie = d3.layout.pie()
+	.sort(null)
+	.value(function(d) {
+		return d.value;
+	});
+
+var arc = d3.svg.arc()
+	.outerRadius(radius * 0.8)
+	.innerRadius(radius * 0.4);
+
+var outerArc = d3.svg.arc()
+	.innerRadius(radius * 0.9)
+	.outerRadius(radius * 0.9);
+
+svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var key = function(d){ return d.data.label; };
+
+change("Age_Group_formated_2016.csv");
+
+d3.select(".changeYear")
+	.on("click", function(){
+		
+        var val = document.getElementById("yearlabel").innerText;
+        if (val == "Population for 2011") {
+            document.getElementById("yearlabel").innnerText = "Population for 2016";
+            change("Age_Group_formated.csv");
+        }
+        else if (val == "Population for 2011"){
+            document.getElementById("yearlabel").innnerText = "Population for 2011";
+            change("Age_Group_formated2.csv");
+        }
+	});
+
+
+function change(filename) {
+    
+    var data = {};
+    d3.csv(filename, (data) => {
+        data.map(d => {
+            data[d["name"]] = +d["value"];
+        });
+        console.log(data);
+        
+        var color = d3.scale.ordinal()
+                      .domain(data)
+	                  .range(["#8dd3c7","#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5","#d9d9d9","#bc80bd","#ccebc5","#ffed6f"]);
+       
+        var slice = svg.select(".slices").selectAll("path.slice")
+            .data(pie(data), data.value);
+
+        slice.enter()
+            .insert("path")
+            .style("fill", function(d) { return color(d.data.value); })
+            .attr("class", "slice");
+
+        slice		
+            .transition().duration(1000)
+            .attrTween("d", function(d) {
+                this._current = this._current || d;
+                var interpolate = d3.interpolate(this._current, d);
+                this._current = interpolate(0);
+                return function(t) {
+                    return arc(interpolate(t));
+                };
+            })
+
+        slice.exit()
+            .remove();
+        
+        /* ------- TEXT LABELS -------*/
+
+        var text = svg.select(".labels").selectAll("text")
+            .data(pie(data), data.key);
+
+        text.enter()
+            .append("text")
+            .attr("dy", ".35em")
+            .text(function(d) {
+                return d.data.name;
+            });
+
+        function midAngle(d){
+            return d.startAngle + (d.endAngle - d.startAngle)/2;
+        }
+
+        text.transition().duration(1000)
+            .attrTween("transform", function(d) {
+                this._current = this._current || d;
+                var interpolate = d3.interpolate(this._current, d);
+                this._current = interpolate(0);
+                return function(t) {
+                    var d2 = interpolate(t);
+                    var pos = outerArc.centroid(d2);
+                    pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
+                    return "translate("+ pos +")";
+                };
+            })
+            .styleTween("text-anchor", function(d){
+                this._current = this._current || d;
+                var interpolate = d3.interpolate(this._current, d);
+                this._current = interpolate(0);
+                return function(t) {
+                    var d2 = interpolate(t);
+                    return midAngle(d2) < Math.PI ? "start":"end";
+                };
+            });
+
+        text.exit()
+            .remove();
+        
+        /* ------- SLICE TO TEXT POLYLINES -------*/
+
+        var polyline = svg.select(".lines").selectAll("polyline")
+            .data(pie(data), data.value);
+
+        polyline.enter()
+            .append("polyline");
+
+        polyline.transition().duration(1000)
+            .attrTween("points", function(d){
+                this._current = this._current || d;
+                var interpolate = d3.interpolate(this._current, d);
+                this._current = interpolate(0);
+                return function(t) {
+                    var d2 = interpolate(t);
+                    var pos = outerArc.centroid(d2);
+                    pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+                    return [arc.centroid(d2), outerArc.centroid(d2), pos];
+                };			
+            });
+
+        polyline.exit()
+            .remove();
+    });
+};
+
+</script>
+</body>

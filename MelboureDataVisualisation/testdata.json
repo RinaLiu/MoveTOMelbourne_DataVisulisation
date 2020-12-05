@@ -1,0 +1,83 @@
+{
+  "religions": [
+    {
+      "name": "Hinduism"
+    },
+    {
+      "name": "Islam"
+    },
+     
+    {
+      "name": "Buddhism"
+    },
+    {
+      "name": "Christianity"
+    },
+    {
+      "name": "Judaism"
+    }
+  ],
+  "area" : [
+    
+   [
+      {"axis": "West Melbourne", "value": 0.114},
+      {"axis": "Southbank", "value":  0.123},
+      {"axis": "South Yarra", "value":  0.057},
+      {"axis": "Parkville", "value": 0.055},
+      {"axis": "North Melbourne", "value":  0.054},
+      {"axis": "Melbourne (CBD)", "value":  0.161},
+      {"axis": "Kensington", "value":  0.161},
+      {"axis": "East Melbourne", "value": 0.016},
+      {"axis": "Docklands", "value":  0.320},
+      {"axis": "Carlton", "value":  0.069}
+    ],
+   [
+      {"axis": "West Melbourne", "value": 0.079},
+      {"axis": "Southbank", "value":  0.073},
+      {"axis": "South Yarra", "value":  0.033},
+      {"axis": "Parkville", "value": 0.094},
+      {"axis": "North Melbourne", "value":  0.210},
+      {"axis": "Melbourne (CBD)", "value":  0.081},
+      {"axis": "Kensington", "value":  0.105},
+      {"axis": "East Melbourne", "value": 0.013},
+      {"axis": "Docklands", "value":  0.013},
+      {"axis": "Carlton", "value":  0.207}
+    ],
+   [
+      {"axis": "West Melbourne", "value": 0.104},
+      {"axis": "Southbank", "value":  0.109},
+      {"axis": "South Yarra", "value":  0.045},
+      {"axis": "Parkville", "value": 0.061},
+      {"axis": "North Melbourne", "value":  0.099},
+      {"axis": "Melbourne (CBD)", "value":  0.224},
+      {"axis": "Kensington", "value":  0.083},
+      {"axis": "East Melbourne", "value": 0.037},
+      {"axis": "Docklands", "value":  0.092},
+      {"axis": "Carlton", "value":  0.145}
+    ],
+      [
+      {"axis": "West Melbourne", "value": 0.085},
+      {"axis": "Southbank", "value":  0.085},
+      {"axis": "South Yarra", "value":  0.129},
+      {"axis": "Parkville", "value": 0.105},
+      {"axis": "North Melbourne", "value":  0.084},
+      {"axis": "Melbourne (CBD)", "value":  0.069},
+      {"axis": "Kensington", "value":  0.118},
+      {"axis": "East Melbourne", "value": 0.137},
+      {"axis": "Docklands", "value":  0.094},
+      {"axis": "Carlton", "value":  0.078}
+    ],
+   [
+      {"axis": "West Melbourne", "value": 0.025},
+      {"axis": "Southbank", "value":  0.085},
+      {"axis": "South Yarra", "value":  0.500},
+      {"axis": "Parkville", "value": 0.061},
+      {"axis": "North Melbourne", "value":  0.063},
+      {"axis": "Melbourne (CBD)", "value":  0.036},
+      {"axis": "Kensington", "value":  0.013},
+      {"axis": "East Melbourne", "value": 0.126},
+      {"axis": "Docklands", "value": 0.023},
+      {"axis": "Carlton", "value":  0.068}
+    ]
+  ]
+}

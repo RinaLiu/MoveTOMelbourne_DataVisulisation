@@ -1,0 +1,311 @@
+
+/*----------------------------------------------------------------------- 
+Responsive css
+-------------------------------------------------------------------------* /
+
+The Damon - Resume HTML5 Template
+
+File:           CSS Base
+Version:        1.1
+Last change:     
+Author:         xsTheme
+
+/*-------- css code for responsive layout  --------*/
+/*  To make Responsive
+---------------------------------------------------------------------- /
+*   1 - media screen and (max-width: 1199px)
+*   2 - media screen and (max-width: 991px)
+*   3 - media screen and (max-width: 767px)
+*   4 - media screen and (max-width: 680px)
+*   5 - media screen and (max-width: 480px)
+*
+---------------------------------------------------------------------- 
+
+------------------------------------------------------------------------------------------ */
+@media screen and (max-width: 1199px) { 
+	.my-profile-pic {
+		height: 400px;
+		width: 400px;
+	}
+	.testimonial-pic:before {
+		display: none;
+	}
+	.testimonial-pic:after {
+		display: none;
+	}
+	.blog-title {
+		right: -50px;
+	}
+	.blog-pic-text.v-2 .blog-title {
+		left: -50px;
+	}
+}
+@media screen and (max-width: 991px) { 
+	.section-padding {
+		padding: 110px 0px;
+	}	
+	.my-profile-pic {
+		height: 450px;
+		width: 450px;
+		margin: 50px auto;
+	}
+	.admin-text  {
+		padding-top: 0;
+		padding-left: 0;
+	}
+	.my-profile-details {
+		margin-top: 50px;
+	}
+	.my-profile-details ul {
+		padding: 0;
+	}
+	.modal-dialog {
+		width: 680px;
+	}
+	.project-details-area {
+		margin-bottom: 20px;
+	}
+	.testimonial-slide .owl-nav {
+		right: -200px;
+		bottom: 30px;
+	}
+	.blog-pic, .blog-text {
+		width: 100%;
+	}
+	.blog-title {
+		position: inherit;
+		margin-bottom: 30px;
+	}
+	.blog-meta {
+		margin-top: 20px;
+		margin-left: 2px;
+		margin-bottom: 20px;
+	}
+	.blog-pic-text.v-2 .blog-date {
+		float: none;
+		margin: inherit;
+	}
+	.blog-pic-text.v-2  .blog-meta {
+		text-align: left;
+	}
+	.get-in-touch-contact .contact-area-form input,
+	.comment-form  .contact-area-form input,
+	.comment-form  .contact-area-form textarea, 
+	.get-in-touch-contact  .contact-area-form textarea {
+		width: 100%;
+		margin-left: 0;
+	}
+	.side-bar {
+		padding-top: 50px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.container {
+		padding: 0px 30px;
+	}
+	.admin-text,
+	.about-me-description {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 680px) { 
+	.banner-section {
+		padding-bottom: 650px;
+	}
+	.degree-text {
+		overflow: hidden;
+	}
+	.resume-institute {
+		margin-right: 40px;
+	}
+	.testimonial-pic {
+		max-width: 450px;
+		margin: 0 auto;
+	}
+	.testimonial-slide .owl-nav {
+		right: 0;
+	}
+	.blog-date {
+		float: none;
+		line-height: 1;
+	}
+	.blog-title {
+		margin-bottom: 0;
+	}
+	.blog-meta {
+		margin-top: 0;
+	}
+	.blog-pic-text.v-2 {
+		margin-bottom: 30px;
+	}
+	.blog-pic-text.v-2  .blog-pic {
+		margin-top: 20px;
+	}
+	.recent-post-link {
+		overflow: hidden;
+	}
+}
+@media screen and (max-width: 520px)  {
+	.admin-text, .about-me-description {
+		max-width: 400px;
+	}
+	.admin-sponsor-slider .owl-controls .owl-prev, 
+	.admin-sponsor-slider .owl-controls .owl-next {
+		top: 45px;
+	}
+	.item-grid {
+		width: 100%;
+	}
+	.header-social ul li {
+		margin-left: 5px;
+	}
+	.header-social {
+		width: 60%;
+	}
+	.modal-dialog {
+		width: 300px;
+		margin: 0 auto;
+	}
+
+}
+@media screen and (max-width: 420px)  {
+	.social-text {
+		display: none;
+	}
+	.banner-head {
+		font-size: 30px;
+	}
+	.banner-section {
+		padding-bottom: 500px;
+	}
+	.section-padding {
+		padding: 40px 0px;
+	}
+	.my-profile-pic {
+		height: 300px;
+		width: 300px;
+		margin: 0 auto 50px;
+	}
+	.admin-text, .about-me-description {
+		max-width: 310px;
+	}
+	.admin-sponsor-slider .owl-controls .owl-prev,
+	.admin-sponsor-slider .owl-controls .owl-next {
+		top: 30px;
+	}
+	.what-offer-content .owl-controls {
+		margin-top: 40px;
+	}
+	.what-offer-section .section-padding {
+		padding-bottom: 40px;
+	}
+	.title-head {
+		font-size: 30px;
+	}
+	.button-group button {
+		margin-right: 15px;
+	}
+	.related-project-title h3 {
+		font-size: 25px;
+	}
+	.mb80 {
+		margin-bottom: 40px;
+	}
+	.resume-institute {
+		margin: 0 auto 30px;
+		float: none;
+	}
+	.testimonial-text {
+		padding-top: 10px;
+	}
+	.my-resume-section .section-padding {
+		padding-bottom: 20px;
+	}
+	.goolge-address {
+		left: 0;
+	}
+	.blog-date {
+		font-size: 30px;
+	}
+	.blog-title-head {
+		font-size: 18px;
+	}
+	.admin-quote blockquote {
+		max-width: 250px;
+		margin: 0 auto;
+	}
+	.pb65 {
+		padding-bottom: 25px;
+	}
+	.mb130 {
+		margin-bottom: 80px;
+	}
+	.portfolio-head {
+		font-size: 16px;
+	}
+	.video-section-title h1 {
+		font-size: 30px;
+	}
+	.video-area.video-section {
+		min-height: 600px;
+	}
+	.breadcrum-section {
+		padding-bottom: 380px;
+	}
+	.breadcrum-head {
+		font-size: 30px;
+	}
+	#site-header {
+		padding: 25px 0px;
+	}
+	.error-head {
+		font-size: 30px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.title-head {
+		font-size: 24px;
+	}
+	.button-group button {
+		margin-right: 5px;
+	}
+	.testimonial-text {
+		padding-left: 0;
+	}
+	.my-profile-details li {
+		margin-bottom: 10px;
+	}
+	.progress {
+		margin-bottom: 25px;
+	}
+	.my-profile-details .pro-title {
+		font-size: 16px;
+	}
+	.testimonial-text {
+		margin-right: 50px;
+	}
+	.testimonial-slide .owl-stage-outer {
+		padding-bottom: 60px;
+	}
+	.resume-tab-item .tabs li {
+		width: 120px;
+	}
+}
+@media screen and (max-width: 320px) {
+	.admin-text {
+		max-width: 250px;
+	}
+	.admin-quote blockquote:before {
+		top: -15px;
+		left: -28px;
+		font-size: 25px;
+	}
+	.button-group button {
+		font-size: 16px;
+	}
+	.mb50 {
+		margin-bottom: 30px;
+	}
+
+}
